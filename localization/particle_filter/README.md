@@ -1,15 +1,65 @@
-# Overview
-This repository contains all the code needed to complete the final project for the Localization course in Udacity's Self-Driving Car Nanodegree.
 
-#### Submission
-All you will need to submit is your `src` directory. You should probably do a `git pull` before submitting to verify that your project passes the most up-to-date version of the grading code (there are some parameters in `src/main.cpp` which govern the requirements on accuracy and run time).
+<h1 align="center">Extended Kalman Filter  </h1>
+<p align="center">
+  <a href="#about">About</a> •
+  <a href="#learning">Learning</a> •
+  <a href="#installation">Installation</a> •
+  <a href="#configuration">Configuration</a> •
+  <a href="#references">References</a> •
+  <a href="#credits">Credits</a> •
+  <a href="#going-further">Going Further</a>
+</p>
 
-## Project Introduction
+---
+
+<h1 align="center">
+  <br>
+  <a href="https://github.com/VinBots/robots_clp"><img src="https://github.com/VinBots/robots_clp/blob/main/docs/assets/kalman.jpg" alt="Kalman"></a>
+</h1>
+<h5 align="center">Kalman filter tracking of a bicycle position and velocity around a vehicle</h2>
+
+## About
+
 Your robot has been kidnapped and transported to a new location! Luckily it has a map of this location, a (noisy) GPS estimate of its initial location, and lots of (noisy) sensor and control data.
 
 In this project you will implement a 2 dimensional particle filter in C++. Your particle filter will be given a map and some initial localization information (analogous to what a GPS would provide). At each time step your filter will also get observation and control data.
 
-## Running the Code
+The only file you should modify is `particle_filter.cpp` in the `src` directory. The file contains the scaffolding of a `ParticleFilter` class and some associated methods. Read through the code, the comments, and the header file `particle_filter.h` to get a sense for what this code is expected to do.
+
+If you are interested, take a look at `src/main.cpp` as well. This file contains the code that will actually be running your particle filter and calling the associated methods.
+
+### Inputs to the Particle Filter
+You can find the inputs to the particle filter in the `data` directory.
+
+### The Map*
+`map_data.txt` includes the position of landmarks (in meters) on an arbitrary Cartesian coordinate system. Each row has three columns
+1. x position
+2. y position
+3. landmark id
+
+### All other data the simulator provides, such as observations and controls.
+
+> * Map data provided by 3D Mapping Solutions GmbH.
+
+
+The objectives are set as follows:
+
+1. **Accuracy**: the particle filter should localize vehicle position and yaw to within the values specified in the parameters `max_translation_error` and `max_yaw_error` in `src/main.cpp`.
+
+2. **Performance**: the particle filter should complete execution within the time of 100 seconds.
+
+Modified files are: `src/particle_filter.cpp`, and `particle_filter.h`
+
+
+## Learning
+
+* Particle Filter
+* C++ programming
+
+## Installation
+
+Please refer to this [repository](https://github.com/udacity/CarND-Kidnapped-Vehicle-Project)
+
 This project involves the Term 2 Simulator which can be downloaded [here](https://github.com/udacity/self-driving-car-sim/releases)
 
 This repository includes two files that can be used to set up and install uWebSocketIO for either Linux or Mac systems. For windows you can use either Docker, VMware, or even Windows 10 Bash on Ubuntu to install uWebSocketIO.
@@ -29,10 +79,6 @@ Alternatively some scripts have been included to streamline this process, these 
 3. ./run.sh
 
 Tips for setting up your environment can be found [here](https://classroom.udacity.com/nanodegrees/nd013/parts/40f38239-66b6-46ec-ae68-03afd8a601c8/modules/0949fca6-b379-42af-a919-ee50aa304e6a/lessons/f758c44c-5e40-4e01-93b5-1a82aa4e044f/concepts/23d376c7-0195-4276-bdf0-e02f1f3c665d)
-
-Note that the programs that need to be written to accomplish the project are src/particle_filter.cpp, and particle_filter.h
-
-The program main.cpp has already been filled out, but feel free to modify it.
 
 Here is the main protocol that main.cpp uses for uWebSocketIO in communicating with the simulator.
 
@@ -112,32 +158,20 @@ root
     |   particle_filter.h
 ```
 
-The only file you should modify is `particle_filter.cpp` in the `src` directory. The file contains the scaffolding of a `ParticleFilter` class and some associated methods. Read through the code, the comments, and the header file `particle_filter.h` to get a sense for what this code is expected to do.
 
-If you are interested, take a look at `src/main.cpp` as well. This file contains the code that will actually be running your particle filter and calling the associated methods.
+## Configuration
 
-## Inputs to the Particle Filter
-You can find the inputs to the particle filter in the `data` directory.
+Refer to the files ``
 
-#### The Map*
-`map_data.txt` includes the position of landmarks (in meters) on an arbitrary Cartesian coordinate system. Each row has three columns
-1. x position
-2. y position
-3. landmark id
+## References
 
-### All other data the simulator provides, such as observations and controls.
-
-> * Map data provided by 3D Mapping Solutions GmbH.
-
-## Success Criteria
-If your particle filter passes the current grading code in the simulator (you can make sure you have the current version at any time by doing a `git pull`), then you should pass!
-
-The things the grading code is looking for are:
+* None 
 
 
-1. **Accuracy**: your particle filter should localize vehicle position and yaw to within the values specified in the parameters `max_translation_error` and `max_yaw_error` in `src/main.cpp`.
+## Credits
 
-2. **Performance**: your particle filter should complete execution within the time of 100 seconds.
+* Udacity [Self-Driving Car Engineer Nanodegree](https://www.udacity.com/course/self-driving-car-engineer-nanodegree--nd013) program.  
 
-## How to write a README
-A well written README file can enhance your project and portfolio.  Develop your abilities to create professional README files by completing [this free course](https://www.udacity.com/course/writing-readmes--ud777).
+## Going Further
+
+* Unscented Kalman Filter

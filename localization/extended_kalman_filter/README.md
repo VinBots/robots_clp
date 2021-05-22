@@ -26,7 +26,7 @@ Lidar measurements are red circles, radar measurements are blue circles with an 
 
 A Kalman filter will be used to estimate the state of a moving object of interest with noisy lidar and radar measurements. The objective is to obtain RMSE values that are lower than the following tolerance: px, py, vx, and vy RMSE should be less than or equal to [.11, .11, 0.52, 0.52].
 
-Modified files are: the files `Tools.cpp`, `kalman_filter.cpp` and `FusionEKF.cpp`
+Modified files are: `Tools.cpp`, `kalman_filter.cpp` and `FusionEKF.cpp`
 
 ## Learning
 
@@ -118,7 +118,7 @@ Refer to the files `Tools.cpp`, `kalman_filter.cpp` and `FusionEKF.cpp`.
 
 ## Going Further
 
-* real-life applications with more noisy data
+* Unscented Kalman Filter
 
 # 
 
