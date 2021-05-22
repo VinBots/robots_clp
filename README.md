@@ -20,9 +20,9 @@
 
 <h1 align="center">
   <br>
-  <a href="https://github.com/VinBots/world_models"><img src="docs/assets/clp_images.jpg" alt="robotics"></a>
+  <a href="https://github.com/VinBots/robots_clp"><img src="docs/assets/clp_images2.jpg" alt="robotics"></a>
 </h1>
-<h5 align="center">xx</h2>
+<h5 align="center">Examples for behavioral cloning, particle filter, object detection, trajectory generation, 3D controls and 3D motion planning</h2>
 
 ## About
 
@@ -31,6 +31,7 @@ This repository includes a series of algorithms used in robotics, mainly self-dr
 * 2D / 3D controller: 
   * PID Control of a car in 2D; 
   * Cascaded PID controller for 3D  motions (positions, velocities,  accelerations and pitch, roll, yaw orientations) of a quadcopter
+
 * Localization /  Tracking
   *  Given a map, some initial localization data (like a GPS)  and at each time step, some  observation and control data,  estimation of the localization of  the vehicle; tracking a bicycle's  position and velocity using lidar  and radar measurements
 
