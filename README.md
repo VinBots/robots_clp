@@ -2,7 +2,7 @@
 
 <h1 align="center">
   <br>
-  <a href="https://github.com/VinBots/robots_clp"><img src="docs/assets/logo.jpg" width="300" height="300" alt="Robotics CLP"></a>
+  <a href="https://github.com/VinBots/robots_clp"><img src="docs/assets/logo2.jpg" alt="Robotics CLP"></a>
 </h1>
 
 <h4 align="center">A Suite of Projects in Controls, Localization and Planning in Robotics </h4>
@@ -20,7 +20,7 @@
 
 <h1 align="center">
   <br>
-  <a href="https://github.com/VinBots/world_models"><img src="docs/assets/world_model_comic.jpeg" width="600" alt="robotics"></a>
+  <a href="https://github.com/VinBots/world_models"><img src="docs/assets/clp_images.jpg" alt="robotics"></a>
 </h1>
 <h5 align="center">xx</h2>
 
@@ -33,10 +33,6 @@ This repository includes a series of algorithms used in robotics, mainly self-dr
   * Cascaded PID controller for 3D  motions (positions, velocities,  accelerations and pitch, roll, yaw orientations) of a quadcopter
 * Localization /  Tracking
   *  Given a map, some initial localization data (like a GPS)  and at each time step, some  observation and control data,  estimation of the localization of  the vehicle; tracking a bicycle's  position and velocity using lidar  and radar measurements
-
-
-
-
 
 
 ## Learning
@@ -90,7 +86,8 @@ Please refer to each project
 
 ## Credits
 
-* 
+* Udacity [Self-Driving Car Engineer Nanodegree](https://www.udacity.com/course/self-driving-car-engineer-nanodegree--nd013) program.  
+* Udacity [Flying Car and Autonomous Flight Engineer Nanodegree](https://www.udacity.com/course/flying-car-nanodegree--nd787) program. 
 
 
 ## Going Further
