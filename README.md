@@ -28,26 +28,30 @@
 
 This repository includes a series of algorithms used in robotics, mainly self-driving vehicles and drones, for controls, localization and planning.
 
-* 2D / 3D controller: 
-  * PID Control of a car in 2D; 
+* **Controls** 
+  * PID Control of a car in 2D 
   * Cascaded PID controller for 3D  motions (positions, velocities,  accelerations and pitch, roll, yaw orientations) of a quadcopter
+  * Behavioral cloning: End-to-end learning (from pixel  to action) for predicting   steering angle of a vehicle  solely based on camera  images
 
-* Localization /  Tracking
-  *  Given a map, some initial localization data (like a GPS)  and at each time step, some  observation and control data,  estimation of the localization of  the vehicle; tracking a bicycle's  position and velocity using lidar  and radar measurements
+* **Localization /  Tracking**
+  *  Given a map, some initial localization data (like a GPS)  and at each time step, some  observation and control data,  estimation of the localization of  the vehicle; 
+  *  tracking a bicycle's  position and velocity using lidar  and radar measurements
 
+* **Planning**
+  * Design of smooth, safe paths  for a car to follow along a 3  
+lane highway with traffic, using  localization, sensor fusion, and  map data; 
+  * 3D motion planner  for a quadcopter
 
 ## Learning
 
-* Particle filter
-* Extended  Kalman filter,
+* Deep Learning (mainly computer vision, convolutional neural networks, SSD MobileNet, OpenCV)
+* Particle filter, Extended  Kalman filter
 * Sensor fusion
-* Search,
-* prediction
-* trajectory  generation
-* grid and/or  graph  representations
-* Basic geometry
-* Basic physics  (Forces /  Moments /  Transformations)
-
+* Search
+* Prediction
+* Trajectory  generation
+* Grid and/or  graph  representations
+* Basic geometry / Basic physics  (Forces /  Moments /  Transformations)
 
 ## Installation
 
@@ -82,7 +86,8 @@ Please refer to each project
 
 ## References
 
-*
+* This research paper goes into how to detect curves and will also help in detecting faded lanes. It uses an extended version of hough lines algorithm to detect tangents to the curve which can help you detect the curve. http://airccj.org/CSCP/vol5/csit53211.pdf
+* 
 
 
 ## Credits
