@@ -1,56 +1,89 @@
-# **Finding Lane Lines on the Road** 
-[![Udacity - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)
 
-<img src="examples/laneLines_thirdPass.jpg" width="480" alt="Combined Image" />
+<h1 align="center">Simple Lane Detection </h4>
+<p align="center">
+  <a href="#about">About</a> •
+  <a href="#learning">Learning</a> •
+  <a href="#installation">Installation</a> •
+  <a href="#configuration">Configuration</a> •
+  <a href="#references">References</a> •
+  <a href="#credits">Credits</a> •
+  <a href="#going-further">Going Further</a>
+</p>
 
-Overview
 ---
+
+<h1 align="center">
+  <br>
+  <a href="https://github.com/VinBots/world_models"><img src="examples/laneLines_thirdPass.jpg" alt="world_models"></a>
+</h1>
+<h5 align="center">Lane Detection on a highway</h2>
+
+## About
 
 When we drive, we use our eyes to decide where to go.  The lines on the road that show us where the lanes are act as our constant reference for where to steer the vehicle.  Naturally, one of the first things we would like to do in developing a self-driving car is to automatically detect lane lines using an algorithm.
 
-In this project you will detect lane lines in images using Python and OpenCV.  OpenCV means "Open-Source Computer Vision", which is a package that has many useful tools for analyzing images.  
 
-To complete the project, two files will be submitted: a file containing project code and a file containing a brief write up explaining your solution. We have included template files to be used both for the [code](https://github.com/udacity/CarND-LaneLines-P1/blob/master/P1.ipynb) and the [writeup](https://github.com/udacity/CarND-LaneLines-P1/blob/master/writeup_template.md).The code file is called P1.ipynb and the writeup template is writeup_template.md 
+### Description of the pipeline.
 
-To meet specifications in the project, take a look at the requirements in the [project rubric](https://review.udacity.com/#!/rubrics/322/view)
+My pipeline consisted of 6 steps. 
 
+* read and grayscale the image
+* gaussian smoothing
+* canny to detect edges
+* Creating a mask
+* Hough Transformation
+* Display lines
 
-Creating a Great Writeup
----
-For this project, a great writeup should provide a detailed response to the "Reflection" section of the [project rubric](https://review.udacity.com/#!/rubrics/322/view). There are three parts to the reflection:
+I created a function draw_line_on_image that outputs an image with the drawing of identified lines
 
-1. Describe the pipeline
+The main modifications I made are in the function draw_lines:
+* the left lane lines were identified by the negative slope and the right lane lines by the positive slope
+* then, I extrapolated the points at the bottom and the top the region of interests and stored them
+* finally, I averaged these points
 
-2. Identify any shortcomings
+I also excluded some noise in the data by removing data points where x1=x2 or y1 = y2 and also I limited the slope to values within [-0.45;0.45] 
 
-3. Suggest possible improvements
+###  Potential shortcomings
 
-We encourage using images in your writeup to demonstrate how your pipeline works.  
+* only works for 960 * 540 resolution
+* would not work for sharp turns (abs(slope) > 0.45)
+* does not adjust the region of interests according to speed and horizon
+* would not work if it was snowy, rainy or dark
 
-All that said, please be concise!  We're not looking for you to write a book here: just a brief description.
+## Learning
+* OpenCV
+* gaussian smoothing
+* canny to detect edges
+* Creating a mask
+* Hough Transformation
 
-You're not required to use markdown for your writeup.  If you use another method please just submit a pdf of your writeup. Here is a link to a [writeup template file](https://github.com/udacity/CarND-LaneLines-P1/blob/master/writeup_template.md). 
+## Installation
 
-
-The Project
----
-
-## If you have already installed the [CarND Term1 Starter Kit](https://github.com/udacity/CarND-Term1-Starter-Kit/blob/master/README.md) you should be good to go!   If not, you should install the starter kit to get started on this project. ##
 
 **Step 1:** Set up the [CarND Term1 Starter Kit](https://github.com/udacity/CarND-Term1-Starter-Kit/blob/master/README.md) if you haven't already.
 
 **Step 2:** Open the code in a Jupyter Notebook
 
-You will complete the project code in a Jupyter notebook.  If you are unfamiliar with Jupyter Notebooks, check out [Udacity's free course on Anaconda and Jupyter Notebooks](https://classroom.udacity.com/courses/ud1111) to get started.
+## Configuration
 
-Jupyter is an Ipython notebook where you can run blocks of code and see results interactively.  All the code for this project is contained in a Jupyter notebook. To start Jupyter in your browser, use terminal to navigate to your project directory and then run the following command at the terminal prompt (be sure you've activated your Python 3 carnd-term1 environment as described in the [CarND Term1 Starter Kit](https://github.com/udacity/CarND-Term1-Starter-Kit/blob/master/README.md) installation instructions!):
+All the parameters are located in the jupyter notebook `P1.ipynb`
 
-`> jupyter notebook`
+## References
 
-A browser window will appear showing the contents of the current directory.  Click on the file called "P1.ipynb".  Another browser window will appear displaying the notebook.  Follow the instructions in the notebook to complete the project.  
+* This research paper goes into how to detect curves and will also help in detecting faded lanes. It uses an extended version of hough lines algorithm to detect tangents to the curve which can help you detect the curve. http://airccj.org/CSCP/vol5/csit53211.pdf
+* [Cheatsheet](.../docs/assets/p1-cheat-sheet.pdf)
 
-**Step 3:** Complete the project and submit both the Ipython notebook and the project writeup
 
-## How to write a README
-A well written README file can enhance your project and portfolio.  Develop your abilities to create professional README files by completing [this free course](https://www.udacity.com/course/writing-readmes--ud777).
 
+## Credits
+
+* Udacity [Self-Driving Car Engineer Nanodegree](https://www.udacity.com/course/self-driving-car-engineer-nanodegree--nd013) program.  
+
+
+## Going Further
+
+There are many possible improvements, for example:
+
+* Change parameters according to the speed
+* Compare series of lines to exclude significant changes of direction
+* Include weather data / rain sensors / time data to adjust the model
