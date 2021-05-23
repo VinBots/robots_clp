@@ -1,5 +1,5 @@
 
-<h1 align="center">Extended Kalman Filter  </h1>
+<h1 align="center">Particle Filter  </h1>
 <p align="center">
   <a href="#about">About</a> •
   <a href="#learning">Learning</a> •
@@ -14,9 +14,9 @@
 
 <h1 align="center">
   <br>
-  <a href="https://github.com/VinBots/robots_clp"><img src="/docs/assets/kalman.jpg" alt="Kalman"></a>
+  <a href="https://github.com/VinBots/robots_clp"><img src="/docs/assets/particle.jpg" alt="Particle Filter"></a>
 </h1>
-<h5 align="center">Kalman filter tracking of a bicycle position and velocity around a vehicle</h2>
+<h5 align="center">Localization of a vehicle based on sensors and control information</h2>
 
 ## About
 

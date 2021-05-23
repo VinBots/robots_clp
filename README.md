@@ -33,18 +33,21 @@ This repository includes a series of algorithms used in robotics, mainly self-dr
   * [3D Cascaded PID controller](controls/3D_cascaded_controller) for 3D  motions (positions, velocities,  accelerations and pitch, roll, yaw orientations) of a quadcopter
   * [Behavioral cloning](controls/behavioral_cloning): End-to-end learning (from pixel  to action) for predicting   steering angle of a vehicle  solely based on camera  images
 
-* **Localization /  Tracking**
-  *  Given a map, some initial localization data (like a GPS)  and at each time step, some  observation and control data,  estimation of the localization of  the vehicle; 
-  *  tracking a bicycle's  position and velocity using lidar  and radar measurements
+* **[Localization /  Tracking](localization/)**
+  *  [3D Estimation](localization/3D_estimation): Given a map, some initial localization data (like a GPS)  and at each time step, some  observation and control data,  estimation of the localization of  the vehicle
+  *  [Extended Kalman Filter](localization/extended_kalman_filter): tracking a bicycle's  position and velocity using lidar and radar measurements
+  *  [Basic lane line detection](localization/lane_line_detection): detecting the right and left lanes in a video of a car in a highway with basic computer vision techniques.
+  *  [advanced lane line detection](localization/advanced_lane_line_detection): detecting the right and left lanes in a video of a car in a highway with more advanced computer vision techniques
+  *  [Traffic sign detection](localization/traffic_sign_classifier): classify traffic signs from the German Traffic Sign Dataset
+  *  [Particle Filter](localization/particle_filter):  given a map, some initial localization information (analogous to what a GPS would provide) and at each time step observation and control data, localize a vehicle using 2D particle filter.
 
-* **Planning**
-  * Design of smooth, safe paths  for a car to follow along a 3  
-lane highway with traffic, using  localization, sensor fusion, and  map data; 
-  * 3D motion planner  for a quadcopter
+* **[Planning](planning/)**
+  * [2D path planner](planning/path_planning): design of smooth, safe paths  for a car to follow along a 3 lane highway with traffic, using  localization, sensor fusion, and  map data
+  * [3D motion planner](planning/3D_motion_planning)  for a quadcopter searching for an optimal path in a complex urban environment.
 
 ## Learning
 
-* Deep Learning (mainly computer vision, convolutional neural networks, SSD MobileNet, OpenCV)
+* Deep Learning and Computer Vision (convolutional neural networks, SSD MobileNet, OpenCV)
 * Particle filter, Extended  Kalman filter
 * Sensor fusion
 * Search
@@ -86,8 +89,7 @@ Please refer to each project
 
 ## References
 
-* This research paper goes into how to detect curves and will also help in detecting faded lanes. It uses an extended version of hough lines algorithm to detect tangents to the curve which can help you detect the curve. http://airccj.org/CSCP/vol5/csit53211.pdf
-* 
+Please refer to each project
 
 
 ## Credits
