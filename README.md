@@ -28,8 +28,8 @@
 
 This repository includes a series of algorithms used in robotics, mainly self-driving vehicles and drones, for controls, localization and planning.
 
-* **Controls** 
-  * PID Control of a car in 2D 
+* **[Controls](controls/)** 
+  * PID Control of a car in 2D
   * Cascaded PID controller for 3D  motions (positions, velocities,  accelerations and pitch, roll, yaw orientations) of a quadcopter
   * Behavioral cloning: End-to-end learning (from pixel  to action) for predicting   steering angle of a vehicle  solely based on camera  images
 
