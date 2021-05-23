@@ -1,27 +1,35 @@
-# **Behavioral Cloning** 
+<h1 align="center">
+  <br>
+  <img src="images/logo.jpg" width="278" height="208" alt="behavioral cloning"></a>
+</h1>
 
-## Project no4 - Udacity Self-Driving Car NanoDegree Program
-
-
+<h4 align="center">Behavioral Cloning</h4>
+<p align="center">
+  <a href="#about">About</a> •
+  <a href="#results">Results</a> •
+  <a href="#installation">Installation</a> •
+  <a href="#configuration">Configuration</a> •
+  <a href="#references">References</a> •
+  <a href="#credits">Credits</a> •
+  <a href="#going-further">Going Further</a>
+</p>
 
 ---
+<h1 align="center">
+  <br>
+  <a href=""><img src="images/screenshot2.jpg" width="600" alt="PID"></a>
+</h1>
+<h5 align="center">End-to-end learning of steering angles from images</h2>
 
-**Behavioral Cloning Project**
+
+## About
+
 
 The goals / steps of this project are the following:
 * Use the simulator to collect data of good driving behavior
 * Build, a convolution neural network in Keras that predicts steering angles from images
 * Train and validate the model with a training and validation set
 * Test that the model successfully drives around track one without leaving the road
-* Summarize the results with a written report
-
-## Rubric Points
-### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/432/view) individually and describe how I addressed each point in my implementation.  
-
----
-### Files Submitted & Code Quality
-
-#### 1. Submission includes all required files and can be used to run the simulator in autonomous mode
 
 My project includes the following files:
 * model.py containing the script to create and train the model
@@ -29,22 +37,7 @@ My project includes the following files:
 * model11.h5 (video run3.mp4) and model111.h5 (video run2.mp4) containing a trained convolution neural network 
 * writeup_report.md summarizing the results
 
-#### 2. Submission includes functional code
-Using the Udacity provided simulator and my drive.py file, the car can be driven autonomously around the track by executing 
-```sh
-python drive.py model11.h5
-```
-or
-```sh
-python drive.py model111.h5
-```
-#### 3. Submission code is usable and readable
-
-The model.py file contains the code for training and saving the convolution neural network. The file shows the pipeline I used for training and validating the model, and it contains comments to explain how the code works.
-
 ### Model Architecture and Training Strategy
-
-#### 1. An appropriate model architecture has been employed
 
 My model is inspired by the NVidia end-to-end model (https://developer.nvidia.com/blog/deep-learning-self-driving-cars/) 
 Note that I also included dropout layers to mitigate overfitting risks.
@@ -61,11 +54,11 @@ I did not use grayscaling but instead introduce 1x1 convolutions to let the mode
 The model contains dropout layers in order to reduce overfitting.
 The model was trained and validated on different data sets to ensure that the model was not overfitting. The model was tested by running it through the simulator and ensuring that the vehicle could stay on the track.
 
-#### 3. Model parameter tuning
+#### 3. Optimizer
 
-The model used an adam optimizer, so the learning rate was not tuned manually
+The model used an Adam optimizer.
 
-#### 4. Appropriate training data
+#### 4. Training data
 
 Training data was chosen to keep the vehicle driving on the road. I used a combination of center lane driving, recovering from the left and right sides of the road. Data provided by Udacity proved to be more efficient to train the model.
 Model11.h5 is trained with 5 epochs of Udacity Data
@@ -127,12 +120,39 @@ I finally randomly shuffled the data set and put 20% of the data into a validati
 
 I used Udacity-provided and personal training data for training the model. The validation set helped determine if the model was over or under fitting. The ideal number of epochs was 5 epochs (Udacity data only - model11.h5) or 2 + 4 epochs (Udacity data + personal training data - model111.h5),  as evidenced by the validation set accuracy. I used an adam optimizer so that manually training the learning rate wasn't necessary.
 
-#### 4. Videos
+## Results
 
-run2.mp4 is the video produced with model111.h5 (Udacity + personal data, 2 + 4 epochs)
-run3.mp4 is the video produced with model11.h5 (Udacity data only, 5 epochs)
+* run2.mp4 is the video produced with model111.h5 (Udacity + personal data, 2 + 4 epochs)
 
-#### 5. Next Steps
+* run3.mp4 is the video produced with model11.h5 (Udacity data only, 5 epochs)
+
+
+## Installation
+
+## 
+   
+## Configuration
+
+Using the Udacity provided simulator and the `drive.py` file, the car can be driven autonomously around the track by executing 
+```sh
+python drive.py model11.h5
+```
+or
+```sh
+python drive.py model111.h5
+```
+
+The model.py file contains the code for training and saving the convolution neural network. The file shows the pipeline I used for training and validating the model, and it contains comments to explain how the code works.
+
+## References
+
+* NVidia end-to-end model (https://developer.nvidia.com/blog/deep-learning-self-driving-cars/) 
+
+## Credits
+
+* Udacity [Self-Driving Car Engineer Nanodegree](https://www.udacity.com/course/self-driving-car-engineer-nanodegree--nd013) program.  
+
+## Going Further
 
 The project could be further developed by:
 * collecting more data (2nd track), (for example, including sharper turns and slope)
