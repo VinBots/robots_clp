@@ -6,7 +6,7 @@
 <h4 align="center">2D-Path Planning </h4>
 <p align="center">
   <a href="#about">About</a> •
-  <a href="#learning">Learning</a> •
+  <a href="#results">Results</a> •
   <a href="#installation">Installation</a> •
   <a href="#configuration">Configuration</a> •
   <a href="#references">References</a> •

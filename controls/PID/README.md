@@ -1,12 +1,34 @@
-# CarND-Controls-PID
-Self-Driving Car Engineer Nanodegree Program
+<h1 align="center">
+  <br>
+  <img src="images/logo.jpg" width="278" height="208" alt="DRL"></a>
+</h1>
+
+<h4 align="center">PID Control</h4>
+<p align="center">
+  <a href="#about">About</a> •
+  <a href="#results">Results</a> •
+  <a href="#installation">Installation</a> •
+  <a href="#configuration">Configuration</a> •
+  <a href="#references">References</a> •
+  <a href="#credits">Credits</a> •
+  <a href="#going-further">Going Further</a>
+</p>
 
 ---
-## Objective
+<h1 align="center">
+  <br>
+  <a href=""><img src="images/screenshot.jpg" width="600" alt="PID"></a>
+</h1>
+<h5 align="center">2 PID controllers (speed and steering) with automatic tuning (twiddle)</h2>
+
+
+## About
+
 The objective of this project is to program in C++ a PID controller and tune its hyperparameters for a vehicle driving around a track in the Udacity simulator.
 Hyperparameters tuning (Kp, Ki and Kd) were performed both manually and automatically via an algorithm called Twiddle.
 
-## PID Algorithm
+### PID Algorithm
+
 I implemented 2 PID controllers:
 * Speed PID: the throttle value (input) regulates the speed (output). Maintaining a constant speed was important to better tune the steering PID as the hyper-parameters Kp, Ki and Kd apparently varies depending on speed. See Speed_PID.cpp and Speed_PID.h.
 * Steering PID: the CTE (Cross_Track Error = Input) regulates the steering value (output between -1 and 1). See PID.cpp and PID.h
@@ -20,7 +42,7 @@ correction(t) = Kp * e(t) + Ki * Sum[e(0),e(1), ..., e(t)] + Kd * de(t) / dt
 
 * D =  Kd * de(t)/dt accounts for the rate of error change, so it anticipates the future trend of the error (reduces oscillation in case of steering)
 
-## Steering PID Tuning
+### Steering PID Tuning
 I started by a manual tuning of the hyper-parameters:
 * Kp (proportional component) between 0.1 and 0.2 until the vehicle oscillates
 * Then, I tuned Kd (derivative) to reduce oscillations
@@ -44,9 +66,9 @@ The code is located in a function of the PID class, called Twiddle(). For each p
  
 Note that the simulator resets in case the vehicles goes more than 2.5m away from the center (line 106 in main.cpp)
 
+## Results
 
-## Performance
-The vehicle was able to drive safely until a speed of 55 mph with the following hyperparameters:
+### The vehicle was able to drive safely until a speed of 55 mph with the following hyperparameters:
 |Speed (in mph)   | Kp [propoprtional]        | Ki [Integral]  | Kd [Derivative]  |
 |---|---|---|---|
 | 35  | 0.125       | 0.000286  | 1.01681  |
@@ -55,15 +77,10 @@ The vehicle was able to drive safely until a speed of 55 mph with the following 
 
 I also tested the PID controller at 75mph but could not find appropriate parameters while driving safely and maintaining a constant speed. By introducing a brake function (braking when CTE > threshold, i.e. when the vehicle is about to go off track, was necessary to keep the vehicle on track).
 
-Please refer to the video "Video Recording 2020-09-01.mov" in the src folder.
+Please refer to the video "Video Recording 2020-09-01.mov".
 
-## Reflections
-Future improvements:
-* The automatic tuning of the steering PID could be further improved by iterating over a stable environment (like one lap, a constant speed, after the PID controller stablilizes)
-* the integral value of the PID component could be preset so that it reduces the time for stabilization.
-* Hyper-parameters could be dynamically adjusted according to speed.
 
-PID controller looks pretty efficient in the test case scenario until max 65mph but lacks any anticipation related to the path perception and the car trajectory is not smooth enough. I understand that a Model Predictive Control (MPC) would be more appropriate.
+## Installation
 
 ## Testing Environment
 Udacity's workspace was used exclusively. Simulator's settings are 640 x 480 screen resolution and fastest graphics quality.
@@ -102,10 +119,28 @@ Fellow students have put together a guide to Windows set-up for the project [her
 
 Tips for setting up your environment can be found [here](https://classroom.udacity.com/nanodegrees/nd013/parts/40f38239-66b6-46ec-ae68-03afd8a601c8/modules/0949fca6-b379-42af-a919-ee50aa304e6a/lessons/f758c44c-5e40-4e01-93b5-1a82aa4e044f/concepts/23d376c7-0195-4276-bdf0-e02f1f3c665d)
 
-## Code Style
-
-Google's C++ style guide](https://google.github.io/styleguide/cppguide.html).
-
-## Project Instructions and Rubric
-
 The project is buildable using cmake and make
+   
+## Configuration
+
+Please see code in `main.cpp` and `pid.cpp`
+
+## References
+
+* None
+
+## Credits
+
+* Udacity [Self-Driving Car Engineer Nanodegree](https://www.udacity.com/course/self-driving-car-engineer-nanodegree--nd013) program.  
+
+## Going Further
+
+Future improvements:
+* The automatic tuning of the steering PID could be further improved by iterating over a stable environment (like one lap, a constant speed, after the PID controller stablilizes)
+* the integral value of the PID component could be preset so that it reduces the time for stabilization.
+* Hyper-parameters could be dynamically adjusted according to speed.
+
+PID controller looks pretty efficient in the test case scenario until max 65mph but lacks any anticipation related to the path perception and the car trajectory is not smooth enough. I understand that a Model Predictive Control (MPC) would be more appropriate.
+
+
+

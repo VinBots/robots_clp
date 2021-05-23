@@ -14,7 +14,7 @@
 
 <h1 align="center">
   <br>
-  <a href="https://github.com/VinBots/robots_clp"><img src="https://github.com/VinBots/robots_clp/blob/main/docs/assets/kalman.jpg" alt="Kalman"></a>
+  <a href="https://github.com/VinBots/robots_clp"><img src="/docs/assets/kalman.jpg" alt="Kalman"></a>
 </h1>
 <h5 align="center">Kalman filter tracking of a bicycle position and velocity around a vehicle</h2>
 
