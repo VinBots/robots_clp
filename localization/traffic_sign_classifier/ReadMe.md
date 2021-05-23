@@ -157,7 +157,7 @@ Please refer to the instructions at the root of the repository
 
 ## Configuration
 
-Refer to the files ``
+Refer to the jupyter notebook files
 
 ## References
 
