@@ -37,7 +37,7 @@ This repository includes a series of algorithms used in robotics, mainly self-dr
   *  [3D Estimation](localization/3D_estimation): Given a map, some initial localization data (like a GPS)  and at each time step, some  observation and control data,  estimation of the localization of  the vehicle
   *  [Extended Kalman Filter](localization/extended_kalman_filter): tracking a bicycle's  position and velocity using lidar and radar measurements
   *  [Basic lane line detection](localization/lane_line_detection): detecting the right and left lanes in a video of a car in a highway with basic computer vision techniques.
-  *  [advanced lane line detection](localization/advanced_lane_line_detection): detecting the right and left lanes in a video of a car in a highway with more advanced computer vision techniques
+  *  [Advanced lane line detection](localization/advanced_lane_line_detection): detecting the right and left lanes in a video of a car in a highway with more advanced computer vision techniques
   *  [Traffic sign detection](localization/traffic_sign_classifier): classify traffic signs from the German Traffic Sign Dataset
   *  [Particle Filter](localization/particle_filter):  given a map, some initial localization information (analogous to what a GPS would provide) and at each time step observation and control data, localize a vehicle using 2D particle filter.
 
