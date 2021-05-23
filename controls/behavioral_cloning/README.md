@@ -35,7 +35,6 @@ My project includes the following files:
 * model.py containing the script to create and train the model
 * drive.py for driving the car in autonomous mode
 * model11.h5 (video run3.mp4) and model111.h5 (video run2.mp4) containing a trained convolution neural network 
-* writeup_report.md summarizing the results
 
 ### Model Architecture and Training Strategy
 
